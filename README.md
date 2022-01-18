@@ -43,7 +43,7 @@ Peacock was the employee with the most orders
 
 **c)**
 
-'''with productCountry as(
+```with productCountry as(
 SELECT products.productname, customers.country from orders
 inner join customers on customers.customerid= orders.customerid
 inner join orderdetails on orders.orderid=orderdetails.orderid
@@ -54,7 +54,7 @@ select productname, count(*) as orderCount from productCountry
 where country ='Germany'
 group by productname
 order by count(*) desc
-limit 1'''
+limit 1```
 
 
 Gorgonzola Telino was the product ordered most by customers in Germany
