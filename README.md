@@ -21,13 +21,13 @@ c) What product was ordered the most by customers in Germany?
 
 
 **a)** 
-
+```
 SELECT COUNT (*) FROM ORDERS WHERE SHIPPERID =1
-
+```
 There were 54 orders shipped by Speedy Express
 
 **b)**
-
+```
 with employeeCount as
 (SELECT  employees.lastname
 , count(*) as orderCount
@@ -38,7 +38,7 @@ group by lastname
 order by count(*) desc
 )
 select lastname from employeeCount limit 1;
-
+```
 Peacock was the employee with the most orders
 
 **c)**
