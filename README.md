@@ -17,5 +17,11 @@ b) What is the last name of the employee with the most orders?
 
 c) What product was ordered the most by customers in Germany?
 
+**Question 2 Answers
+**
 
+**a)** 
+SELECT COUNT (*) FROM ORDERS WHERE SHIPPERID =1
+
+There were 54 orders shipped by Speedy Express
 
