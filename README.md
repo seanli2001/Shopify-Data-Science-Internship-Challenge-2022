@@ -54,9 +54,9 @@ select productname, count(*) as orderCount from productCountry
 where country ='Germany'
 group by productname
 order by count(*) desc
-limit 1```
+limit 1
 
-
+```
 Gorgonzola Telino was the product ordered most by customers in Germany
 
 
