@@ -17,6 +17,45 @@ b) What is the last name of the employee with the most orders?
 
 c) What product was ordered the most by customers in Germany?
 
+**Question 1 Answers**
+
+**a)**
+
+
+Their calculation is giving an average order amount of 3145.13, which appears to be a bit high for the average cost of a sneaker. We can begin by doing some analysis on the dataset to gauge how they are getting this value. 
+
+By opening up the excel file and clicking on the column "order amount" we can observe in the bottom right that the average in this column is 3145.13, alternatively we can use excel code to get this result: 
+
+```
+=AVERAGE(D:D)
+```
+
+Each value in the order amount, is also tied to a number of items ordered by the consumer. Now I know that their answers were based off giving the average of the order amount column which is a miscalculation on finding average cost for a shoe. 
+
+
+**b)** 
+
+A better metric to report would be giving an average based on the total order amount, divided by the quantity of items ordered.
+
+**c)**
+
+To solve this we can use Python:
+
+```
+import pandas as pd
+
+df = pd.read_excel('questionOneData.xlsx')
+total= df["total_items"].sum()
+df= df["order_amount"]
+print(df.sum()/total)
+```
+Out:
+```
+357.92152221412965
+```
+Therefore the correct value for the average cost of a shoe would be 357.92, which is a lot better than the initial calculation of 3145.13, and this is inline with how the sneakers are a relatively affordable product.
+
+
 **Question 2 Answers**
 
 
