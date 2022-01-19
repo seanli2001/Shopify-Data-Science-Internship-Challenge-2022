@@ -43,6 +43,8 @@ Peacock was the employee with the most orders
 
 **c)**
 
+There were two ways of interpreting the question c, I have included both below.
+
 ```with productCountry as(
 SELECT products.productname, customers.country from orders
 inner join customers on customers.customerid= orders.customerid
@@ -58,5 +60,18 @@ limit 1
 
 ```
 Gorgonzola Telino was the product ordered most by customers in Germany
+
+Whereas, 
+
+```
+SELECT SUM(Quantity) AS [Volume Sold], ProductName FROM OrderDetails
+INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID
+WHERE OrderID IN (SELECT OrderID FROM Orders WHERE CustomerID IN (SELECT CustomerID FROM Customers WHERE Country='Germany'))
+GROUP BY ProductName
+ORDER BY SUM(Quantity) DESC;
+```
+
+Boston Crab meat was the product ordered most quantity wise, by customers in 
+Germany, with a volume of 160 sold.
 
 
